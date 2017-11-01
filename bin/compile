@@ -122,6 +122,8 @@ curl $R_BINARIES -s -o - | tar xzvf - -C $BUILD_DIR
 
 # need to copy the binaries to /app/vendor so that R works when compiling packages
 
+pwd
+
 echo "$BUILD_DIR: $BUILD_DIR"
 ls -la $BUILD_DIR
 
