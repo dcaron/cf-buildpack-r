@@ -123,12 +123,12 @@ curl $R_BINARIES -s -o - | tar xzf - -C $BUILD_DIR
 # need to copy the binaries to /app/vendor so that R works when compiling packages
 
 
-echo "$BUILD_DIR: $BUILD_DIR"
+echo "BUILD_DIR: $BUILD_DIR"
 ls -la $BUILD_DIR
-ls -la $BUILD_DIR/.root
+#ls -la $BUILD_DIR/.root
 
-#echo "VENDOR_DIR: $VENDOR_DIR"
-#ls -la $VENDOR_DIR
+echo "VENDOR_DIR: $VENDOR_DIR"
+ls -la $VENDOR_DIR
 
 #echo "copy $BUILD_DIR/.apt/* to /app/.apt"
 mkdir -p /app/.apt
