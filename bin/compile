@@ -118,22 +118,22 @@ done
 
 # download and unpack binaries
 echo "Downloading and unpacking R binaries ($R_BINARIES)" | indent
-curl $R_BINARIES -s -o - | tar xzvf - -C $BUILD_DIR
+curl $R_BINARIES -s -o - | tar xzf - -C $BUILD_DIR
 
 # need to copy the binaries to /app/vendor so that R works when compiling packages
 
-pwd
 
 echo "$BUILD_DIR: $BUILD_DIR"
 ls -la $BUILD_DIR
+ls -la $BUILD_DIR/.root
 
-echo "VENDOR_DIR: $VENDOR_DIR"
-ls -la $VENDOR_DIR
+#echo "VENDOR_DIR: $VENDOR_DIR"
+#ls -la $VENDOR_DIR
 
-echo "copy $BUILD_DIR/.apt/* to /app/.apt"
+#echo "copy $BUILD_DIR/.apt/* to /app/.apt"
 mkdir -p /app/.apt
 cp -R $BUILD_DIR/.apt/* /app/.apt
-ls -la /app/.apt
+#ls -la /app/.apt
 
 mkdir -p /app/vendor/R
 echo "copy .root/usr/local/lib/R/* to /app/vendor/R"
