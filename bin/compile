@@ -153,7 +153,12 @@ export CPPPATH="$INCLUDE_PATH"
 export PKG_CONFIG_PATH="/app/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:/app/.apt/usr/lib/i386-linux-gnu/pkgconfig:/app/.apt/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
 export LDFLAGS="-L/app/.apt/usr/lib/libblas -L/app/.apt/usr/lib/lapack $LDFLAGS"
 
-export R_HOME="/app/vendor/R"
+export R_BASE="/app/vendor/R"
+export R_HOME=$R_BASE/lib64/R
+export R_INCLUDE=$R_HOME/include
+echo "R_HOME set to '$R_HOME'" | indent
+echo "R_INCLUDE set to '$R_INCLUDE'" | indent
+
 
 # copy over environment
 mkdir -p $BUILD_DIR/.profile.d
