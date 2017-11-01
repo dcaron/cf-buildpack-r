@@ -169,7 +169,7 @@ echo "Executing init.r script" | indent
 # set the CRAN mirror and run the init.r program
 /app/vendor/R/bin/R -s <<RPROG > indent
   Sys.setenv(BUILD_DIR="$BUILD_DIR")
-  Sys.setenv(R_HOME="R_HOME")
+  Sys.setenv(R_HOME="$R_HOME")
   setwd("$BUILD_DIR")
   r <- getOption("repos");
   r["CRAN"] <- "$CRAN_MIRROR";
