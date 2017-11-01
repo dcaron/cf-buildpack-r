@@ -137,6 +137,8 @@ cp -R $BUILD_DIR/.apt/* /app/.apt
 
 mkdir -p /app/vendor/R
 echo "copy .root/usr/local/lib/R/* to /app/vendor/R"
+ls -la "$BUILD_DIR/.root/usr/local/lib/R/*"
+
 cp -R "$BUILD_DIR/.root/usr/local/lib/R/*" /app/vendor/R
 ls -la /app/vendor/R
 
